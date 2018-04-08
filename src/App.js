@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './app.css';
 class App extends Component {
-  render() {
-    return (
+  constructor(props){
+    super(props);
+    this.state={
+      deadline: 'December 25, 2018...'
+    }
+  }
+  render(){
+    return(
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React1</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="App-title">Countdown to {this.state.deadline}</div>
+        <div>
+          <div className="Clock-days">14 days</div>
+          <div className="Clock-hours">30 hrs</div>
+          <div className="Clock-minutes">15 mins</div>
+          <div className="Clock-seconds">20 secs</div>
+        </div>
+        <div>
+          <input placeholder="new date"/>
+          <button>Submit</button>
+        </div>
       </div>
-    );
+    )
   }
 }
 
